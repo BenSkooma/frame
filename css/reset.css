@@ -1,4 +1,6 @@
-@supports not (selector(:where(*))) { /* body::before { display: block; content: '@supports, no-where'; background-color: yellow; } */
+@supports not (selector(:where(*))) { 
+  
+  /* body::before { display: block; content: '@supports, no-where'; background-color: yellow; } */
 
   html::before { display: none !important; content: 'css fallback applied'; }
 
@@ -6,7 +8,9 @@
 
 }
 
-@supports (selector(:where(*))) { /* body::before { display: block; content: '@supports, where'; background-color: lime; } */
+@supports (selector(:where(*))) { 
+  
+  /* body::before { display: block; content: '@supports, where'; background-color: lime; } */
 
   *:where(:not(html):not(iframe):not(canvas):not(img):not(video):not(svg)) {
     all: unset;
