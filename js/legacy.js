@@ -1,7 +1,7 @@
 var log = true;
 
-var fallback_css = 'core/reset/legacy.js.css';
-var conditional = document.getElementById("conditional");
+var fallback_css = 'css/reset.legacy.js.css';
+var conditional = document.getElementById("reset");
 var supports = checkRule('@supports', log);
 var where = checkSelector(':where(*)', log);
 var applied = cssApplied(document.documentElement);
@@ -41,6 +41,7 @@ function checkSelector(selector, log) {
     if (log) console.log('API', selector, '=', support);
     return support;
   }
+
   function append(selector) {
     try {
       sheet.insertRule(selector + '{}', 0);

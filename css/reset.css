@@ -1,4 +1,4 @@
-@import 'legacy.css';
+@import 'reset.legacy.css';
 
 @supports (selector(:where(*))) {
 

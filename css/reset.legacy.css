@@ -1,5 +1,7 @@
 @supports not (selector(:where(*))) {
 
+  /* html::before { display: none !important; content: 'css fallback applied'; } */
+
   html::before {
     display: block;
     content: 'Supports :where(*) Fail';
