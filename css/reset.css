@@ -1,50 +1,83 @@
-@import 'reset.legacy.css';
+/* @import 'reset.legacy.css'; */
 
-/* @supports (selector(:where(*))) {
-
-  html::before {
-    display: block;
-    content: '@supports, :where()';
-    background-color: lime;
-    position: fixed;
-    top: 0;
-    right: 0;
-  }
-
-} */
-
-/* :where(html)::before {
-  display: block;
-  content: '@supports, :where()';
-  background-color: green;
-  position: fixed;
-  top: 0;
-  right: 0;
-} */
-
-/* *:where(:not(html):not(iframe):not(canvas):not(img):not(video):not(svg):not(svg *):not(symbol *)) {
-  all: unset;
-  display: revert;
-  background-color: lime;
-} */
-
-
-@supports not (selector(:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)))) {
-
-  *:where(:not(html):not(iframe):not(canvas):not(img):not(video):not(svg)) {
-    all: unset;
-    display: revert;
-    background-color: yellow;
-  }
-
-}
+body::before { display: block; }
 
 @supports (selector(:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)))) {
+
+  body::before { content: '@supports, :where(), :not(x, x, x)'; background-color: lime; }
 
   *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
     all: unset;
     display: revert;
-    background-color: lime;
   }
+
+}
+
+@supports not (selector(:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)))) {
+
+  body::before { content: '@supports, :where(), :not(x):not(x)'; background-color: yellow; }
+
+  *:where(:not(html):not(iframe):not(canvas):not(img):not(video):not(svg)) {
+    all: unset;
+    display: revert;
+  }
+
+}
+
+/* Legacy no-where
+/* ======================================================================== */
+
+@supports not (selector(:where(*))) {
+
+  html::before { display: none !important; content: 'css fallback applied'; }
+
+  body::before { content: '@supports, no-where'; background-color: orange; }
+
+  body, div, section, main, article, aside, footer, header, nav, h1, h2, h3, h4, h5, h6, p, blockquote, pre, address, fieldset, details, dl, dt, dd, ol, ul, ol, form, legend, figure, figcaption, hr, li, summary, table, thead, tbody, tfoot, col, colgroup, tr, td, th, caption, span, a, cite, code, del, dfn, em, ins, kbd, q, s, samp, object, small, strong, sub, sup, var, b, u, i, time, mark, abbr, label, embed, output, audio, br, bdo, select,textarea,button,input, acronym, big, strike, tt, center, hgroup, menu, frame, frameset, noframes, map
+  /* html, iframe, img, canvas, video, svg */ {
+    margin: inherit;
+    margin: unset;
+    padding: inherit;
+    padding: unset;
+    background: inherit;
+    background: unset;
+    color: inherit;
+    color: unset;
+    border: inherit;
+    border: unset;
+    border-style: inherit;
+    border-style: unset;
+    border-width: inherit;
+    border-width: unset;
+    font: inherit;
+    font: unset;
+    text-decoration: inherit;
+    text-decoration: unset;
+    list-style: inherit;
+    list-style: unset;
+    cursor: inherit;
+    cursor: unset;
+    outline: inherit;
+    outline: unset;
+    all: inherit;
+    all: unset;
+  }
+
+  body, div, section, main, article, aside, footer, header, nav, h1, h2, h3, h4, h5, h6, p, blockquote, pre, address, fieldset, details, form, legend, figure, figcaption, hr, dl, dt, dd, ol, ul, ol
+  { display: block }
+  
+  li, summary { display: list-item }
+  table       { display: table }
+  thead       { display: table-header-group }
+  tbody       { display: table-row-group }
+  tfoot       { display: table-footer-group }
+  col         { display: table-column }
+  colgroup    { display: table-column-group }
+  tr          { display: table-row }
+  td, th      { display: table-cell }
+  caption     { display: table-caption }
+
+  body, div, section, main, article, aside, footer, header, nav, h1, h2, h3, h4, h5, h6, p, blockquote, pre, address, fieldset, details, dl, dt, dd, ol, ul, ol, form, legend, figure, figcaption, hr, li, summary, table, thead, tbody, tfoot, col, colgroup, tr, td, th, caption, span, a, cite, code, del, dfn, em, ins, kbd, q, s, samp, object, small, strong, sub, sup, var, b, u, i, time, mark, abbr, label, embed, output, audio, br, bdo, select,textarea,button,input, acronym, big, strike, tt, center, hgroup, menu, frame, frameset, noframes, map
+  { display: revert; }
 
 }
