@@ -31,7 +31,7 @@
 *:where(:not(img):not(svg)) {
   all: unset;
   display: revert;
-  background-color: lime;
+  background-color: yellow;
 }
 
 /* *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
