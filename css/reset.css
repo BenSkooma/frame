@@ -1,6 +1,6 @@
 @supports (selector(:where(*))) {
 
-  body::before { display: block; content: '@supports, :where(), :not(x, x, x)'; background-color: lime; }
+  body::before { display: block; content: '@supports, where'; background-color: lime; }
 
   *:where(:not(html):not(iframe):not(canvas):not(img):not(video):not(svg)) {
     all: unset;
