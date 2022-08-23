@@ -1,4 +1,4 @@
-@supports not (selector(:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)))) {
+@supports not (selector(:where(*))) {
 
   html::before { display: none !important; content: 'css fallback applied'; }
 

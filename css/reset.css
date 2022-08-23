@@ -1,6 +1,6 @@
-@import 'reset.legacy.css';
+/* @import 'reset.legacy.css'; */
 
-@supports (selector(:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)))) {
+/* @supports (selector(:where(*))) {
 
   html::before {
     display: block;
@@ -11,9 +11,25 @@
     right: 0;
   }
 
-  *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-    all: unset;
-    display: revert;
-  }
+} */
 
+/* :where(html)::before {
+  display: block;
+  content: '@supports, :where()';
+  background-color: green;
+  position: fixed;
+  top: 0;
+  right: 0;
+} */
+
+*:where(:not(html):not(iframe):not(canvas):not(img):not(video):not(svg):not(svg *):not(symbol *)) {
+  all: unset;
+  display: revert;
+  background-color: green;
+}
+
+*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+  background-color: lime;
 }
