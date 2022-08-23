@@ -27,7 +27,8 @@
   display: revert;
   background-color: lime;
 } */
-*:where(:not(body):not(p):not(html):not(iframe):not(canvas):not(img)) {
+
+*:where(:not(img)) {
   all: unset;
   display: revert;
   background-color: lime;
