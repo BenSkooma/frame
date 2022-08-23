@@ -3,7 +3,7 @@
 /* ======================================================================== */
 
 var log = true;
-var fallback_css = 'css/reset.legacy.js.css';
+var fallback_css = 'css/reset.js.css';
 var conditional = document.getElementById("reset");
 var supports = checkRule('@supports', log);
 var where = checkSelector(':where(*)', log);
