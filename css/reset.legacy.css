@@ -1,11 +1,14 @@
-@supports not (selector(:where(*))) {
+@supports not (selector(:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)))) {
 
-  /* html::before { display: none !important; content: 'css fallback applied'; } */
+  html::before { display: none !important; content: 'css fallback applied'; }
 
-  html::before {
+  body::before {
     display: block;
-    content: 'Supports :where(*) Fail';
+    content: 'no-js, no-where';
     background-color: orange;
+    position: fixed;
+    top: 0;
+    right: 0;
   }
 
   body, div, section, main, article, aside, footer, header, nav, h1, h2, h3, h4, h5, h6, p, blockquote, pre, address, fieldset, details, dl, dt, dd, ol, ul, ol, form, legend, figure, figcaption, hr,

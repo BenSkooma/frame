@@ -1,11 +1,14 @@
 @import 'reset.legacy.css';
 
-@supports (selector(:where(*))) {
+@supports (selector(:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)))) {
 
   html::before {
     display: block;
-    content: 'Supports :where(*) OK';
+    content: '@supports, :where()';
     background-color: lime;
+    position: fixed;
+    top: 0;
+    right: 0;
   }
 
   *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {

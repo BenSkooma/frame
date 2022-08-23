@@ -1,5 +1,8 @@
-var log = true;
 
+/* Reset-Check
+/* ======================================================================== */
+
+var log = true;
 var fallback_css = 'css/reset.legacy.js.css';
 var conditional = document.getElementById("reset");
 var supports = checkRule('@supports', log);
@@ -7,6 +10,12 @@ var where = checkSelector(':where(*)', log);
 var applied = cssApplied(document.documentElement);
 
 if (!supports || !where && !applied) conditional.setAttribute('href', fallback_css);
+
+/* ======================================================================== */
+
+
+
+/* ======================================================================== */
 
 function cssApplied(element) {
   var content = window.getComputedStyle(element, '::before').content;
