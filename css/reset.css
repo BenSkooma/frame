@@ -28,7 +28,7 @@
   background-color: lime;
 } */
 
-*:where(:not(img)) {
+*:where(:not(img):not(svg)) {
   all: unset;
   display: revert;
   background-color: lime;
