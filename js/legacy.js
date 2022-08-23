@@ -13,10 +13,6 @@ if (!supports || !where && !applied) conditional.setAttribute('href', fallback_c
 
 /* ======================================================================== */
 
-
-
-/* ======================================================================== */
-
 function cssApplied(element) {
   var content = window.getComputedStyle(element, '::before').content;
   if (!content || content === 'none') return false;
