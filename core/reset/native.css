@@ -1,0 +1,16 @@
+@import 'legacy.css';
+
+@supports (selector(:where(*))) {
+
+  html::before {
+    display: block;
+    content: 'Supports :where(*) OK';
+    background-color: lime;
+  }
+
+  *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+  }
+
+}
