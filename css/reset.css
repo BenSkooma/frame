@@ -25,11 +25,11 @@
 *:where(:not(html):not(iframe):not(canvas):not(img):not(video):not(svg):not(svg *):not(symbol *)) {
   all: unset;
   display: revert;
-  background-color: green;
+  background-color: lime;
 }
 
-*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+/* *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   all: unset;
   display: revert;
   background-color: lime;
-}
+} */
