@@ -28,14 +28,14 @@
   background-color: lime;
 } */
 
-*:where(:not(img):not(svg)) {
+*:where(:not(html):not(img):not(svg)) {
   all: unset;
   display: revert;
   background-color: yellow;
 }
 
-/* *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   all: unset;
   display: revert;
   background-color: lime;
-} */
+}
