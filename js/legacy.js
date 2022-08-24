@@ -14,7 +14,8 @@ var supports = checkRule('@supports', log);
 var where = checkSelector(':where(*)', log);
 var applied = cssApplied(document.documentElement);
 
-if (!supports || !where && !applied) conditional.setAttribute('href', fallback_css);
+// if (!supports || !where && !applied) conditional.setAttribute('href', fallback_css);
+if (!supports) conditional.setAttribute('href', fallback_css);
 
 /* ======================================================================== */
 
