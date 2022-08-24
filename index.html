@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" dir="ltr" lang="de">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,7 @@
   <title>Document</title>
 
   <link rel="stylesheet" id="reset" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
 
 </head>
 <body>
@@ -46,7 +47,7 @@
 
     <main id="main" tabindex="-1">
       <h1>Heading Number 1</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et adipisci tenetur molestiae repellendus minus excepturi porro asperiores nulla dicta quaerat deleniti, vero magni atque nemo? Sequi voluptatem officia quia porro.</p>
+      <p>Lorem <strong>Test Strong</strong> ipsum, dolor sit <mark>Test mark</mark> amet consectetur adipisicing elit. Et adipisci tenetur molestiae repellendus minus excepturi porro asperiores nulla dicta quaerat deleniti, vero magni atque nemo? Sequi voluptatem officia quia porro.</p>
       <h2>Heading Number 2</h2>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et adipisci tenetur molestiae repellendus minus excepturi porro asperiores nulla dicta quaerat deleniti, vero magni atque nemo? Sequi voluptatem officia quia porro.</p>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et adipisci tenetur molestiae repellendus minus excepturi porro asperiores nulla dicta quaerat deleniti, vero magni atque nemo? Sequi voluptatem officia quia porro.</p>
@@ -60,8 +61,9 @@
         <li>List Item</li>
         <li>List Item</li>
         <li>List Item</li>
+        <li></li>
       </ul>
-      <img style="background-color: red;" src="img/kitty.jpeg" alt="img" height="300" width="200">
+      <img src="img/kitty.jpeg" alt="img" height="300" width="200">
       <h4>Heading Number 4</h4>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et adipisci tenetur molestiae repellendus minus excepturi porro asperiores nulla dicta quaerat deleniti, vero magni atque nemo? Sequi voluptatem officia quia porro.</p>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et adipisci tenetur molestiae repellendus minus excepturi porro asperiores nulla dicta quaerat deleniti, vero magni atque nemo? Sequi voluptatem officia quia porro.</p>
@@ -85,7 +87,10 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum veniam, rem ullam sed laudantium ad nam assumenda modi quod maiores, quia rerum ex magnam obcaecati neque distinctio omnis quis vitae?</p>
   </footer>
 
-  <script nomodule src="js/legacy.js"></script>
+  <script nomodule src="js/vendor/css-vars-ponyfill.min.js" defer></script>
+  <script nomodule src="js/legacy.js" defer></script>
+
+  <script src="js/main.js" defer></script>
 
 </body>
 </html>

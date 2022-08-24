@@ -1,0 +1,81 @@
+/* Load Modules
+/* ========================================================================== */
+
+@import 'modules/sanitize.css';
+@import 'modules/typography.css';
+
+/* Configuration
+/* ========================================================================== */
+
+:root {
+  --font-family-primary: 'Open Sans';
+}
+
+/* Base
+/* ========================================================================== */
+
+@-ms-viewport {width: device-width;}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  background-repeat: no-repeat;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+iframe,
+canvas,
+img,
+svg,
+picture,
+input,
+video,
+select,
+textarea {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+main * :empty {
+  display: none;
+}
+
+/* Restore Content Styles
+/* ------------------------------------------------- */
+
+main ul, main ol {
+  list-style-position: inside;
+}
+main ul ul, main ul ol, main ol ul, main ol ol {
+  padding-left: 1em;
+  margin-bottom: 0;
+}
+main ul {
+  list-style-type: disc;
+}
+main ol {
+  list-style-type: decimal;
+}
+main em {
+  font-style: italic;
+}
