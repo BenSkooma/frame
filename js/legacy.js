@@ -92,4 +92,4 @@ function cssApplied(element, log) {
 // }
 
 /* FOUC FIX */
-// window.addEventListener('load', function(event) {document.documentElement.style.display = 'block';}); 
+window.addEventListener('load', function(event) {document.documentElement.style.display = 'block';}); 
