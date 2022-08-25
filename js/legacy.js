@@ -25,6 +25,8 @@ if (!cssApplied(document.documentElement, log)) {
 
 }
 
+document.documentElement.style.display = 'block';
+
 // window.addEventListener('load', function(event) {
 
 
