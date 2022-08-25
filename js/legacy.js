@@ -12,7 +12,7 @@ var supports = checkRule('@supports', log);
 var where = checkSelector(':where(*)', log);
 var applied = cssApplied(document.documentElement, log); // OSX Safari 9 Fallback
 
-if (!supports) if (!where && !applied) document.getElementById("reset").setAttribute('href', 'css/reset.js.css');
+if (!supports && !applied) document.getElementById("reset").setAttribute('href', 'css/reset.js.css');
 
 /* ======================================================================== */
 
