@@ -4,7 +4,7 @@
   
   body::before { display: block; content: '@supports, no-where'; background-color: var(--debug-bgclr-no-where); }
 
-  html::before { display: none !important; content: 'reset applied'; }
+  html::before { display: block; content: 'reset applied'; }
 
   /* Reset
   /* ----------------------------------------------- */
@@ -33,7 +33,7 @@
   
   body::before { display: block; content: '@supports, where'; background-color: var(--debug-bgclr-native); }
 
-  html::before { display: none !important; content: 'reset applied'; }
+  html::before { display: block; content: 'reset applied'; }
 
   /* Reset
   /* ----------------------------------------------- */
