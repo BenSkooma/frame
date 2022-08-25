@@ -7,11 +7,27 @@ cssVars({ shadowDOM : true });
 /* ======================================================================== */
 
 var log = true;
-var supports = checkRule('@supports', log);
-var selector = checkSelector(':where(*)', log);
-var applied = cssApplied(document.documentElement, log); // OSX Safari 9 Fallback
+// var supports = checkRule('@supports', log);
+// var selector = checkSelector(':where(*)', log);
+// var applied = cssApplied(document.documentElement, log); // OSX Safari 9 Fallback
 
-if (!applied) document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
+// if (!applied) document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
+
+// if (!cssApplied(document.documentElement, log)) {
+
+//   document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
+
+// }
+
+window.addEventListener('load', function(event) {
+
+  if (!cssApplied(document.documentElement, log)) {
+
+    document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
+  
+  }
+  
+}); 
 
 /* ======================================================================== */
 
