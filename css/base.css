@@ -1,10 +1,13 @@
 @import 'modules/sanitize.css';
 
+/* Reset Test */
+@supports (selector(:where(*))){html::before{display:block;content:'reset applied';}}
+@supports not (selector(:where(*))){html::before{display:block;content:'reset applied (legacy)';}}
+
+
 @supports not (selector(:where(*))) { 
   
   body::before { display: block; content: '@supports, no-where'; background-color: var(--debug-bgclr-no-where); }
-
-  html::before { display: block; content: 'reset applied NOT'; }
 
   /* Reset
   /* ----------------------------------------------- */
@@ -32,8 +35,6 @@
 @supports (selector(:where(*))) { 
   
   body::before { display: block; content: '@supports, where'; background-color: var(--debug-bgclr-native); }
-
-  html::before { display: block; content: 'reset applied'; }
 
   /* Reset
   /* ----------------------------------------------- */
