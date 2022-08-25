@@ -79,10 +79,6 @@ textarea {
   max-width: 100%;
 }
 
-main * :empty {
-  display: none;
-}
-
 /* Restore Content Styles
 /* ------------------------------------------------- */
 

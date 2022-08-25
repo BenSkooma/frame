@@ -160,6 +160,10 @@ meter {
   color: unset;
 }
 
+:is(:not(img):not(track):not(br):not(input):not(hr):not(col):not(source):not(base):not(area):not(param):not(wbr)):empty {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
 
   html:focus-within {
@@ -175,6 +179,3 @@ meter {
     scroll-behavior: auto !important;
   }
 }
-
-/* FOUC FIX (goes to the bottom of css) */
-/* html {visibility: visible;opacity: 1;} */
