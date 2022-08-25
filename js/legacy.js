@@ -9,9 +9,10 @@ cssVars({ shadowDOM : true });
 
 var log = true;
 var supports = checkRule('@supports', log);
+var where = checkSelector(':where(*)', log);
 var applied = cssApplied(document.documentElement, log); // OSX Safari 9 Fallback
 
-if (!supports && !applied) document.getElementById("reset").setAttribute('href', 'css/reset.js.css');
+if (!supports || !where || !where && !applied) document.getElementById("reset").setAttribute('href', 'css/reset.js.css');
 
 /* ======================================================================== */
 
@@ -33,30 +34,30 @@ function checkRule(value, log) {
   return support;
 }
 
-// function checkSelector(selector, log) {
-//   if (window.CSS && CSS.supports) return api(selector);
-//   var head = document.head || document.documentElement;
-//   var style = document.createElement('style');
-//   head.insertBefore(style, head.firstChild);
-//   var sheet = style.sheet;
-//   var result = append(selector);
-//   if (log) console.log(selector, '=', result);
+function checkSelector(selector, log) {
+  if (window.CSS && CSS.supports) return api(selector);
+  var head = document.head || document.documentElement;
+  var style = document.createElement('style');
+  head.insertBefore(style, head.firstChild);
+  var sheet = style.sheet;
+  var result = append(selector);
+  if (log) console.log(selector, '=', result);
 
-//   return result;
+  return result;
 
-//   function api(selector) {
-//     var support = CSS.supports('selector('+ selector +')');
-//     if (log) console.log('API', selector, '=', support);
-//     return support;
-//   }
+  function api(selector) {
+    var support = CSS.supports('selector('+ selector +')');
+    if (log) console.log('API', selector, '=', support);
+    return support;
+  }
 
-//   function append(selector) {
-//     try {
-//       sheet.insertRule(selector + '{}', 0);
-//       sheet.deleteRule(0);
-//       return true;
-//     } catch (e) {
-//       return false;
-//     }
-//   }
-// }
+  function append(selector) {
+    try {
+      sheet.insertRule(selector + '{}', 0);
+      sheet.deleteRule(0);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+}
