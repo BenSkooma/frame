@@ -19,15 +19,17 @@ var log = true;
 
 // }
 
-window.addEventListener('load', function(event) {
+if (!cssApplied(document.documentElement, log)) {
 
-  if (!cssApplied(document.documentElement, log)) {
+  document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
 
-    document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
-  
-  }
+}
 
-});
+// window.addEventListener('load', function(event) {
+
+
+
+// });
 
 // var log = true;
 
@@ -92,4 +94,4 @@ function cssApplied(element, log) {
 // }
 
 /* FOUC FIX */
-window.addEventListener('load', function(event) {document.documentElement.style.display = 'block';}); 
+// window.addEventListener('load', function(event) {document.documentElement.style.display = 'block';}); 
