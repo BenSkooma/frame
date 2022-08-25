@@ -8,14 +8,10 @@ cssVars({ shadowDOM : true });
 /* ======================================================================== */
 
 var log = true;
-// var fallback_css = 'css/reset.js.css';
-// var conditional = document.getElementById("reset");
 var supports = checkRule('@supports', log);
-// var where = checkSelector(':where(*)', log);
-var applied = cssApplied(document.documentElement, log);
+var applied = cssApplied(document.documentElement, log); // OSX Safari 9 Fallback
 
-// if (!supports || !where && !applied) conditional.setAttribute('href', fallback_css);
-if (!supports || !applied) document.getElementById("reset").setAttribute('href', 'css/reset.js.css');
+if (!supports && !applied) document.getElementById("reset").setAttribute('href', 'css/reset.js.css');
 
 /* ======================================================================== */
 
