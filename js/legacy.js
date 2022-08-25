@@ -19,6 +19,12 @@ if (!supports) {
 
 }
 
+if (supports && !selector) {
+
+  if (!applied) document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
+
+}
+
 /* ======================================================================== */
 
 function cssApplied(element, log) {
