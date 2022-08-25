@@ -6,7 +6,7 @@ cssVars({ shadowDOM : true });
 /* Reset-Check
 /* ======================================================================== */
 
-var log = true;
+// var log = true;
 // var supports = checkRule('@supports', log);
 // var selector = checkSelector(':where(*)', log);
 // var applied = cssApplied(document.documentElement, log); // OSX Safari 9 Fallback
@@ -19,24 +19,38 @@ var log = true;
 
 // }
 
-window.addEventListener('load', function(event) {
+// window.addEventListener('load', function(event) {
 
-  if (!cssApplied(document.documentElement, log)) {
+//   if (!cssApplied(document.documentElement, log)) {
 
-    document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
+//     document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
   
-  }
+//   }
 
-}); 
+// });
 
-/* ======================================================================== */
+var log = true;
 
-function cssApplied(element, log) {
+function resetApplied(element, log) {
   var content = window.getComputedStyle(element, '::before').content;
   if (!content || content === 'none') return false;
   if (log) console.log(content);
   return true;
 }
+
+window.addEventListener('load', function(event) {
+  if (!resetApplied(document.documentElement, log)) document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
+  document.documentElement.style.display = 'block';
+}); 
+
+/* ======================================================================== */
+
+// function cssApplied(element, log) {
+//   var content = window.getComputedStyle(element, '::before').content;
+//   if (!content || content === 'none') return false;
+//   if (log) console.log(content);
+//   return true;
+// }
 
 // function checkRule(value, log) {
 //   var rule = value;
