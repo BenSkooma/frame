@@ -12,34 +12,20 @@ body,div,section,main,article,aside,footer,header,nav,h1,h2,h3,h4,h5,h6,p,blockq
 
 @-ms-viewport {width: device-width;}
 
-/**
-* 1. Add text decoration inheritance in all browsers (opinionated).
-* 2. Add vertical alignment inheritance in all browsers (opinionated).
-*/
-
 ::before,
 ::after {
-  text-decoration: inherit; /* 1 */
-  vertical-align: inherit; /* 2 */
+  text-decoration: inherit;
+  vertical-align: inherit;
 }
 
-/**
-* 1. Use the default cursor in all browsers (opinionated).
-* 2. Change the line height in all browsers (opinionated).
-* 3. Breaks words to prevent overflow in all browsers (opinionated).
-* 4. Use a 4-space tab width in all browsers (opinionated).
-* 5. Remove the grey highlight on links in iOS (opinionated).
-* 6. Prevent adjustments of font size after orientation changes in iOS.
-*/
-
 :root {
-  cursor: default; /* 1 */
+  cursor: default;
   line-height: 1.15;
-  overflow-wrap: break-word; /* 3 */
-  -moz-tab-size: 4; /* 4 */
-  tab-size: 4; /* 4 */
-  -webkit-tap-highlight-color: transparent; /* 5 */
-  -webkit-text-size-adjust: 100%; /* 6 */
+  overflow-wrap: break-word;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
 }
 
 [hidden] {
@@ -61,6 +47,8 @@ a, button {
 }
 
 audio, canvas, iframe, img, svg, video {
+  height: auto;
+  max-width: 100%;
   vertical-align: middle;
 }
 
@@ -72,13 +60,7 @@ blockquote, q {
   quotes: none;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+p,h1,h2,h3,h4,h5,h6 {
   overflow-wrap: break-word;
 }
 

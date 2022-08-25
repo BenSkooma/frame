@@ -66,11 +66,6 @@ body {
   height: 100%;
 }
 
-iframe, canvas, img, svg {
-  height: auto;
-  max-width: 100%;
-}
-
 /* Restore Content Styles
 /* ------------------------------------------------- */
 
@@ -86,9 +81,6 @@ main ul {
 }
 main ol {
   list-style-type: decimal;
-}
-main em {
-  font-style: italic;
 }
 
 /* ========================================================================== */

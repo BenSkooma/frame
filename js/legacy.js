@@ -1,4 +1,4 @@
-/* Polyfills
+/* css-vars-ponyfill (https://jhildenbiddle.github.io/css-vars-ponyfill/)
 /* ======================================================================== */
 
 cssVars({ shadowDOM : true });
@@ -22,7 +22,6 @@ if (!resetApplied(document.documentElement, log)) cssReset.setAttribute('href', 
 
 /* FOUC FIX */
 // window.addEventListener('load', function(event) {document.documentElement.style.display = 'block';}); 
-
 // document.onreadystatechange = function(event) {
 //   if (document.readyState === "complete") {
 //     document.documentElement.style.display = 'block';
