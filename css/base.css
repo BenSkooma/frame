@@ -163,6 +163,15 @@ meter {
 :is(:not(img):not(track):not(br):not(input):not(hr):not(col):not(source):not(base):not(area):not(param):not(wbr)):empty {
   display: none;
 }
+:matches(:not(img):not(track):not(br):not(input):not(hr):not(col):not(source):not(base):not(area):not(param):not(wbr)):empty {
+  display: none;
+}
+:-moz-any(:not(img):not(track):not(br):not(input):not(hr):not(col):not(source):not(base):not(area):not(param):not(wbr)):empty {
+  display: none;
+}
+:-webkit-any(:not(img):not(track):not(br):not(input):not(hr):not(col):not(source):not(base):not(area):not(param):not(wbr)):empty {
+  display: none;
+}
 
 @media (prefers-reduced-motion: reduce) {
 
