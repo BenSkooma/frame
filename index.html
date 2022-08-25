@@ -7,9 +7,10 @@
 
   <title>Document</title>
 
-  <!-- <link rel="stylesheet" href="css/sanitize.css"> -->
-  <link rel="stylesheet" href="css/reset.css" id="reset">
-  <!-- <link rel="stylesheet" href="css/main.css"> -->
+  <script nomodule>document.documentElement.style.display = 'none';</script> <!-- FOUC -->
+
+  <link rel="stylesheet" href="css/base.css" id="base-css">
+  <link rel="stylesheet" href="css/main.css">
 
 </head>
 <body>
@@ -47,7 +48,7 @@
       <a href="#">Side Read more</a>
     </aside>
 
-    <main class="stack" style="--space: 5rem" id="main" tabindex="-1">
+    <main id="main" tabindex="-1">
       <h1>Heading Number 1</h1>
       <p>Lorem <strong>Test Strong</strong> ipsum, dolor sit <mark>Test mark</mark> amet consectetur adipisicing elit. Et adipisci tenetur molestiae repellendus minus excepturi porro asperiores nulla dicta quaerat deleniti, vero magni atque nemo? Sequi voluptatem officia quia porro.</p>
       <h2>Heading Number 2</h2>
@@ -65,7 +66,7 @@
         <li>List Item</li>
         <li></li>
       </ul>
-      <img src="img/kitty.jpeg" alt="img" height="300" width="200">
+      <img src="img/kitty.jpeg" loading="lazy" alt="img" height="300" width="200">
       <h4>Heading Number 4</h4>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et adipisci tenetur molestiae repellendus minus excepturi porro asperiores nulla dicta quaerat deleniti, vero magni atque nemo? Sequi voluptatem officia quia porro.</p>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et adipisci tenetur molestiae repellendus minus excepturi porro asperiores nulla dicta quaerat deleniti, vero magni atque nemo? Sequi voluptatem officia quia porro.</p>
@@ -89,12 +90,13 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum veniam, rem ullam sed laudantium ad nam assumenda modi quod maiores, quia rerum ex magnam obcaecati neque distinctio omnis quis vitae?</p>
   </footer>
 
-  <script src="js/vendor/modernizr-3.12.0.min.js" defer></script>
-  
-  <script nomodule src="js/vendor/css-vars-ponyfill.min.js" defer></script>
-  <script nomodule src="js/legacy.js" defer></script>
+  <script src="js/vendor/modernizr-3.12.0.min.js"></script>
+  <script type="module" src="js/main.js"></script>
 
-  <script type="module" src="js/main.js" defer></script>
+  <script nomodule src="js/vendor/css-vars-ponyfill.min.js"></script>
+
+  <script nomodule src="js/legacy.js"></script>
+  
 
 </body>
 </html>

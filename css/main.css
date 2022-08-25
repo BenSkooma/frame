@@ -7,6 +7,12 @@
 /* ========================================================================== */
 
 :root {
+  --debug-bgclr-native: lime;
+  --debug-bgclr-no-where: yellow;
+  --debug-bgclr-js-fallback: orange;
+}
+
+:root {
 
   --baseunit: 1rem;
 
@@ -30,8 +36,6 @@
 
 /* Base
 /* ========================================================================== */
-
-@-ms-viewport {width: device-width;}
 
 *,
 *::before,
@@ -73,7 +77,6 @@ select,
 textarea {
   height: auto;
   max-width: 100%;
-  vertical-align: middle;
 }
 
 main * :empty {

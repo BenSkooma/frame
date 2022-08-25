@@ -1,4 +1,3 @@
-
 /* Polyfills
 /* ======================================================================== */
 
@@ -9,10 +8,10 @@ cssVars({ shadowDOM : true });
 
 var log = true;
 var supports = checkRule('@supports', log);
-var where = checkSelector(':where(*)', log);
+var selector = checkSelector(':where(*)', log);
 var applied = cssApplied(document.documentElement, log); // OSX Safari 9 Fallback
 
-if (!supports || !where && !applied) document.getElementById("reset").setAttribute('href', 'css/reset.js.css');
+if (!supports || !selector && !applied) document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
 
 /* ======================================================================== */
 
@@ -61,3 +60,6 @@ function checkSelector(selector, log) {
     }
   }
 }
+
+/* FOUC FIX */
+window.addEventListener('load', function(event) {document.documentElement.style.display = 'block';}); 

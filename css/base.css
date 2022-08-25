@@ -1,6 +1,8 @@
+@import 'modules/sanitize.css';
+
 @supports not (selector(:where(*))) { 
   
-  body::before { display: block; content: '@supports, no-where'; background-color: yellow; }
+  body::before { display: block; content: '@supports, no-where'; background-color: var(--debug-bgclr-no-where); }
 
   html::before { display: none !important; content: 'css fallback applied'; }
 
@@ -15,11 +17,21 @@
   display: none;
  }
 
+  [contenteditable]:not([contenteditable="false"]) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    line-break: after-white-space;
+    -webkit-user-select: auto;
+    user-select: auto;
+  }
+
 }
 
 @supports (selector(:where(*))) { 
   
-  body::before { display: block; content: '@supports, where'; background-color: lime; }
+  body::before { display: block; content: '@supports, where'; background-color: var(--debug-bgclr-native); }
 
   /* Reset
   /* ----------------------------------------------- */
@@ -54,8 +66,44 @@
 /* Restore & Fix
 /* ----------------------------------------------- */
 
+@-ms-viewport {width: device-width;}
+
+/**
+ * 1. Add text decoration inheritance in all browsers (opinionated).
+ * 2. Add vertical alignment inheritance in all browsers (opinionated).
+ */
+
+ ::before,
+ ::after {
+   text-decoration: inherit; /* 1 */
+   vertical-align: inherit; /* 2 */
+ }
+ 
+ /**
+  * 1. Use the default cursor in all browsers (opinionated).
+  * 2. Change the line height in all browsers (opinionated).
+  * 3. Breaks words to prevent overflow in all browsers (opinionated).
+  * 4. Use a 4-space tab width in all browsers (opinionated).
+  * 5. Remove the grey highlight on links in iOS (opinionated).
+  * 6. Prevent adjustments of font size after orientation changes in iOS.
+  */
+ 
+ :root {
+   cursor: default; /* 1 */
+   line-height: 1.15;
+   overflow-wrap: break-word; /* 3 */
+   -moz-tab-size: 4; /* 4 */
+   tab-size: 4; /* 4 */
+   -webkit-tap-highlight-color: transparent; /* 5 */
+   -webkit-text-size-adjust: 100%; /* 6 */
+ }
+
 a, button {
   cursor: revert;
+}
+
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle;
 }
 
 ol, ul, menu {
@@ -127,3 +175,6 @@ meter {
     scroll-behavior: auto !important;
   }
 }
+
+/* FOUC FIX (goes to the bottom of css) */
+/* html {visibility: visible;opacity: 1;} */
