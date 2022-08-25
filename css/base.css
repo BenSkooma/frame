@@ -4,7 +4,7 @@
   
   body::before { display: block; content: '@supports, no-where'; background-color: var(--debug-bgclr-no-where); }
 
-  html::before { display: none !important; content: 'css fallback applied'; }
+  html::before { display: none !important; content: 'reset applied'; }
 
   /* Reset
   /* ----------------------------------------------- */
@@ -32,6 +32,8 @@
 @supports (selector(:where(*))) { 
   
   body::before { display: block; content: '@supports, where'; background-color: var(--debug-bgclr-native); }
+
+  html::before { display: none !important; content: 'reset applied'; }
 
   /* Reset
   /* ----------------------------------------------- */

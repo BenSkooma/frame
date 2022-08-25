@@ -11,7 +11,7 @@ var supports = checkRule('@supports', log);
 var selector = checkSelector(':where(*)', log);
 var applied = cssApplied(document.documentElement, log); // OSX Safari 9 Fallback
 
-if (!selector && !applied) document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
+if (!applied) document.getElementById("base-css").setAttribute('href', 'css/base.js.css');
 
 /* ======================================================================== */
 
