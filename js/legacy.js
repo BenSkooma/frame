@@ -22,3 +22,9 @@ if (!resetApplied(document.documentElement, log)) cssReset.setAttribute('href', 
 
 /* FOUC FIX */
 // window.addEventListener('load', function(event) {document.documentElement.style.display = 'block';}); 
+
+document.onreadystatechange = function(event) {
+  if (document.readyState === "complete") {
+    document.documentElement.style.display = 'block';
+  }
+}; 
