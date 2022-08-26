@@ -27,13 +27,13 @@
 /* Modern
 /* ======================================================================================================= */
 
-@supports (selector(:where(*))) and (selector(:not(img, p))) {
+@supports (selector(:where(*)) and selector(:not(img, p))) {
 
   /* ----------------------------------------------------------------------- */
   html::before { display: none !important; content: 'reset applied'; }
   /* ----------------------------------------------------------------------- */
   /* ----------------------------------------------------------------------- */
-  body::before { display: block; content: '@supports :where(*) = true'; background-color: lime; }
+  body::before { display: block; content: '@supports :where(*) = true | @supports :not(a, b, c) = true'; background-color: lime; }
   /* ----------------------------------------------------------------------- */
 
   *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
@@ -43,13 +43,13 @@
 
 }
 
-@supports (selector(:where(*))) and (not (selector(:not(img, p)))) {
+@supports (selector(:where(*)) and (not selector(:not(img, p)))) {
 
   /* ----------------------------------------------------------------------- */
   html::before { display: none !important; content: 'reset applied'; }
   /* ----------------------------------------------------------------------- */
   /* ----------------------------------------------------------------------- */
-  body::before { display: block; content: '@supports :where(*) = true'; background-color: burlywood; }
+  body::before { display: block; content: '@supports :where(*) = true | @supports :not(a, b, c) = false'; background-color: burlywood; }
   /* ----------------------------------------------------------------------- */
 
   *:where(:not(html):not(iframe):not(canvas):not(img):not(video):not(svg)) {
