@@ -27,66 +27,34 @@
 /* Modern
 /* ======================================================================================================= */
 
-@supports (selector(:where(*))) {
+@supports (selector(:where(*))) and (selector(:not(img, p))) {
 
-  /* js-Feature-Test (do not delete!)
   /* ----------------------------------------------------------------------- */
   html::before { display: none !important; content: 'reset applied'; }
   /* ----------------------------------------------------------------------- */
-  
-  /* Debugging Bar
   /* ----------------------------------------------------------------------- */
   body::before { display: block; content: '@supports :where(*) = true'; background-color: lime; }
   /* ----------------------------------------------------------------------- */
 
-  @supports (selector(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *))) {
-
-    .debug > .css-not::after {
-      display: block; content: '@supports :not(a,b,c) = true'; background-color: lime;
-    }
-
-    /* Reset Modern
-    /* ----------------------------------------------------------------------- */
-    *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-      all: unset;
-      display: revert;
-    }
-
+  *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
   }
 
-  @supports not (selector(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *))) {
+}
 
-    .debug > .css-not::after {
-      display: block; content: '@supports :not(a,b,c) = false'; background-color: yellow;
-    }
-
-    /* Reset Fallback
-    /* ----------------------------------------------------------------------- */
-    /* *:where(:not(html):not(iframe):not(canvas):not(img):not(video):not(svg)) {
-      all: unset;
-      display: revert;
-    } */
-
-  }
-
-
-  /* Reset Modern
-  /* ----------------------------------------------------------------------- */
+@supports (selector(:where(*))) and (not (selector(:not(img, p)))) {
 
   /* ----------------------------------------------------------------------- */
+  html::before { display: none !important; content: 'reset applied'; }
+  /* ----------------------------------------------------------------------- */
+  /* ----------------------------------------------------------------------- */
+  body::before { display: block; content: '@supports :where(*) = true'; background-color: burlywood; }
+  /* ----------------------------------------------------------------------- */
 
-  :where([hidden]) {
-    display: none;
-  }
-
-  :where([contenteditable]:not([contenteditable="false"])) {
-    -moz-user-modify: read-write;
-    -webkit-user-modify: read-write;
-    overflow-wrap: break-word;
-    -webkit-line-break: after-white-space;
-    line-break: after-white-space;
-    -webkit-user-select: auto;
-    user-select: auto;
+  *:where(:not(html):not(iframe):not(canvas):not(img):not(video):not(svg)) {
+    all: unset;
+    display: revert;
   }
 
 }
