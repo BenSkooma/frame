@@ -1,4 +1,4 @@
-@import 'modules/sanitize.css';
+/* @import 'modules/sanitize.css'; */
 
 /* ----------------------------------------------------------- */
 /* CSS Base + Reset Module incl. Cross-Browser Support v 1.3.0
@@ -36,21 +36,43 @@
   
   /* Debugging Bar
   /* ----------------------------------------------------------------------- */
-  body::before { display: block; content: '@supports, where'; background-color: var(--debug-bgclr-native); }
+  body::before { display: block; content: '@supports :where(*) = true'; background-color: lime; }
   /* ----------------------------------------------------------------------- */
 
-  /* Reset Fallback
-  /* ----------------------------------------------------------------------- */
-  *:where(:not(html):not(iframe):not(canvas):not(img):not(video):not(svg)) {
-    all: unset;
-    display: revert;
+  @supports (selector(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *))) {
+
+    .debug > .css-not::after {
+      display: block; content: '@supports :not(a,b,c) = true'; background-color: lime;
+    }
+
+    /* Reset Modern
+    /* ----------------------------------------------------------------------- */
+    *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+      all: unset;
+      display: revert;
+    }
+
   }
+
+  @supports not (selector(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *))) {
+
+    .debug > .css-not::after {
+      display: block; content: '@supports :not(a,b,c) = false'; background-color: yellow;
+    }
+
+    /* Reset Fallback
+    /* ----------------------------------------------------------------------- */
+    /* *:where(:not(html):not(iframe):not(canvas):not(img):not(video):not(svg)) {
+      all: unset;
+      display: revert;
+    } */
+
+  }
+
+
   /* Reset Modern
   /* ----------------------------------------------------------------------- */
-  *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-    all: unset;
-    display: revert;
-  }
+
   /* ----------------------------------------------------------------------- */
 
   :where([hidden]) {
@@ -186,16 +208,19 @@ meter {
   color: unset;
 }
 
-:is(:not(img):not(track):not(br):not(input):not(hr):not(col):not(source):not(base):not(area):not(param):not(wbr)):empty {
+/* :is(:not(img):not(track):not(br):not(input):not(hr):not(col):not(source):not(base):not(area):not(param):not(wbr)):empty {
   display: none;
-}
-:matches(:not(img):not(track):not(br):not(input):not(hr):not(col):not(source):not(base):not(area):not(param):not(wbr)):empty {
+} */
+/* :matches(:not(img):not(track):not(br):not(input):not(hr):not(col):not(source):not(base):not(area):not(param):not(wbr)):empty {
   display: none;
 }
 :-moz-any(:not(img):not(track):not(br):not(input):not(hr):not(col):not(source):not(base):not(area):not(param):not(wbr)):empty {
   display: none;
 }
 :-webkit-any(:not(img):not(track):not(br):not(input):not(hr):not(col):not(source):not(base):not(area):not(param):not(wbr)):empty {
+  display: none;
+} */
+:is(:not(img, track, br, input, hr, col, source, base, area, param, wbr)):empty {
   display: none;
 }
 
