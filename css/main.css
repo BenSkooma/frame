@@ -1,12 +1,12 @@
 /* Load Modules
 /* ========================================================================== */
 
-@import 'modules/typography.css';
+/* @import 'modules/typography.css'; */
 
 /* Configuration
 /* ========================================================================== */
 
-:root {
+/* :root {
   --debug-bgclr-native: lime;
   --debug-bgclr-no-where: yellow;
   --debug-bgclr-js-fallback: orange;
@@ -19,7 +19,6 @@
   --font-family-primary: 'Open Sans';
   --font-size-regular: 1rem;
 
-  /* Scaling */
   --ratio: 1.5;
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
@@ -32,12 +31,12 @@
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
-}
+} */
 
 /* Base
 /* ========================================================================== */
 
-*,
+/* *,
 *::before,
 *::after {
   -webkit-box-sizing: inherit;
@@ -64,12 +63,12 @@ html:focus-within {
 html,
 body {
   height: 100%;
-}
+} */
 
 /* Restore Content Styles
 /* ------------------------------------------------- */
 
-main ul, main ol {
+/* main ul, main ol {
   list-style-position: inside;
 }
 main ul ul, main ul ol, main ol ul, main ol ol {
@@ -81,11 +80,11 @@ main ul {
 }
 main ol {
   list-style-type: decimal;
-}
+} */
 
 /* ========================================================================== */
 
-.stack {
+/* .stack {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -97,4 +96,4 @@ main ol {
 
 .stack > * + * {
   margin-top: var(--space, 1.5rem);
-}
+} */

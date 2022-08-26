@@ -7,7 +7,7 @@ cssVars({ shadowDOM : true });
 /* ======================================================================== */
 
 var log = true;
-var cssReset = document.getElementById("base-css");
+var cssReset = document.getElementById("reset-css");
 
 function resetApplied(element, log) {
   var content = window.getComputedStyle(element, '::before').content;
@@ -16,14 +16,6 @@ function resetApplied(element, log) {
   return true;
 }
 
-if (!resetApplied(document.documentElement, log)) cssReset.setAttribute('href', 'css/base.js.css');
+if (!resetApplied(document.documentElement, log)) cssReset.setAttribute('href', 'css/reset.js.css');
 
 /* ======================================================================== */
-
-/* FOUC FIX */
-// window.addEventListener('load', function(event) {document.documentElement.style.display = 'block';}); 
-// document.onreadystatechange = function(event) {
-//   if (document.readyState === "complete") {
-//     document.documentElement.style.display = 'block';
-//   }
-// }; 
